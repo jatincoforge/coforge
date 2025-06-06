@@ -76,6 +76,14 @@ jobs:
 
     - name: change directory
       run: cd terraformcode && ls
+      
+    - name: Azure CLI Login
+      uses: azure/login@v1
+      with:
+          client-id: "35f2a674-2edc-4e52-a055-6367a9c4ed50"
+          tenant-id: "923b6ece-1052-4b26-a6d7-a34e9d15591d"
+          subscription-id: "b48e5e8d-ace6-4c1c-832d-732fd926c653"
+          client-secret: "9b.8Q~Yx2.3LUt2nPajj5wob~rr_6pcT_TfFOby6"
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
@@ -83,11 +91,11 @@ jobs:
          cd terraformcode 
          ls 
          terraform init -backend-config="dev-backend.tfvars"
-      env:
-        ARM_CLIENT_ID: "35f2a674-2edc-4e52-a055-6367a9c4ed50"
-        ARM_CLIENT_SECRET: "9b.8Q~Yx2.3LUt2nPajj5wob~rr_6pcT_TfFOby6"
-        ARM_SUBSCRIPTION_ID: "b48e5e8d-ace6-4c1c-832d-732fd926c653"
-        ARM_TENANT_ID: "923b6ece-1052-4b26-a6d7-a34e9d15591d"
+      # env:
+      #   ARM_CLIENT_ID: "35f2a674-2edc-4e52-a055-6367a9c4ed50"
+      #   ARM_CLIENT_SECRET: "9b.8Q~Yx2.3LUt2nPajj5wob~rr_6pcT_TfFOby6"
+      #   ARM_SUBSCRIPTION_ID: "b48e5e8d-ace6-4c1c-832d-732fd926c653"
+      #   ARM_TENANT_ID: "923b6ece-1052-4b26-a6d7-a34e9d15591d"
     # # Checks that all Terraform configuration files adhere to a canonical format
     # - name: Terraform Format
     #   run: terraform fmt -check
