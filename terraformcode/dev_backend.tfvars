@@ -1,5 +1,5 @@
 
-    resource_group_name  = "demo"
-    storage_account_name = "testing1991123"
+    resource_group_name  = "temp"
+    storage_account_name = "jatintesting"
     container_name       = "state"
     key                  = "dev.terraform.tfstate"
