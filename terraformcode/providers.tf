@@ -6,6 +6,6 @@ provider "azurerm" {
   tenant_id = "923b6ece-1052-4b26-a6d7-a34e9d15591d"
 }
 
-# terraform {
-#   backend "azurerm" {}
-# }
+ terraform {
+   backend "azurerm" {}
+ }
