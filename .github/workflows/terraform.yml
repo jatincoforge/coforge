@@ -82,8 +82,12 @@ jobs:
       run: |
          cd terraformcode 
          ls 
-         terraform init -backend-config="resource_group_name=temp" -backend-config="storage_account_name=jatintesting" -backend-config="container_name=state" -backend-config="key=dev.terraform.tfstate"
-
+         terraform init -backend-config="dev-backend.tfvars"
+      env:
+        ARM_CLIENT_ID: "35f2a674-2edc-4e52-a055-6367a9c4ed50"
+        ARM_CLIENT_SECRET: "9b.8Q~Yx2.3LUt2nPajj5wob~rr_6pcT_TfFOby6"
+        ARM_SUBSCRIPTION_ID: "b48e5e8d-ace6-4c1c-832d-732fd926c653"
+        ARM_TENANT_ID: "923b6ece-1052-4b26-a6d7-a34e9d15591d"
     # # Checks that all Terraform configuration files adhere to a canonical format
     # - name: Terraform Format
     #   run: terraform fmt -check
