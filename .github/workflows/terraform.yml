@@ -82,7 +82,7 @@ jobs:
       run: |
          cd terraformcode 
          ls 
-         terraform init -backend-config="dev-backend.tfvars"
+         terraform init #-backend-config="dev-backend.tfvars"
 
     # # Checks that all Terraform configuration files adhere to a canonical format
     # - name: Terraform Format
@@ -101,4 +101,4 @@ jobs:
       run: |
          cd terraformcode 
          ls
-         terraform apply -var-file="dev.tfvars" -auto-approve
+        # terraform apply -var-file="dev.tfvars" -auto-approve
